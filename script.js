@@ -36,10 +36,14 @@ async function displayUser() {
   try {
   const user = await new Promise((resolve) => {
     setTimeout(function () {
-      resolve("Brukerdata er lastet inn!"); 
+      resolve("Hente brukerdata!"); 
     }, 3000);
     });
     console.log(user);
+
+    const viewUser = document.createElement("h2");
+    viewUser.textContent = user;
+    document.body.prepend(viewUser);
   } catch (error) { 
       console.log("Error lasting av brukerdata:" + error);
     }
@@ -57,7 +61,7 @@ async function hvisBruker() {
   try {
   const user = await new Promise((resolve) => {
     setTimeout(function () {
-      resolve("Brukerdata er lastet inn!"); 
+      resolve("Bruker er vist! "); 
     }, 3000);
     });
     console.log(user);
@@ -65,7 +69,29 @@ async function hvisBruker() {
       console.log("Error lasting av brukerdata:" + error);
     }
   }
+hvisBruker();
 
-displayUser();
 
+async function displayGjest() {
+  try {
+    let hei = "heisann"
+    // let --> kan endre verdien til hei - til hole  , const ikke endre
+    hei = "hola"
+    console.log(hei);
 
+  const user = await new Promise((resolve) => {
+    setTimeout(function () {
+      resolve("Dagens gjøremål"); 
+    }, 3000);
+    });
+    console.log(user);
+
+    const viewUser = document.createElement("h1");
+    viewUser.textContent = user;
+    document.body.prepend(viewUser);
+  } catch (error) { 
+      console.log("Error lasting av brukerdata:" + error);
+    }
+  }
+
+displayGjest();
